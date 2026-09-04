@@ -20,8 +20,7 @@
     "@nestjs/testing": "^11.2.3",
     "@swc/core": "^1.16.1",
     "@types/bcrypt": "^6.0.0",
-    "@types/better-sqlite3": "^9.6.0",
-    "@types/node": "^26.2.0",
+    "@types/node": "^26.4.1",
     "@types/passport-jwt": "^4.0.1",
     "@types/passport-local": "^1.0.38",
     "@types/supertest": "^7.2.1",
@@ -46,12 +45,12 @@
     "@nestjs/swagger": "^11.4.7",
     "@nestjs/typeorm": "^11.0.3",
     "bcrypt": "^6.0.0",
-    "better-sqlite3": "^12.11.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.15.1",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
+    "pg": "^8.23.0",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^1.1.0"
   }
