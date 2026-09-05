@@ -10,17 +10,19 @@ import { UsersModule } from "./users/users.module";
 import { User } from "./users/entity/user.entity";
 import { AuthModule } from "./auth/auth.module";
 import { ConfigModule } from "@nestjs/config";
+import "dotenv/config";
+
+const databaseUrl = process.env.DATABASE_URL;
+if (!databaseUrl) {
+  throw new Error("DATABASE_URL missing");
+}
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: "postgres",
-      host: process.env.DB_HOST || "localhost",
-      port: Number(process.env.DB_PORT) || 5432,
-      username: process.env.DB_USERNAME || "cyberchat",
-      password: process.env.DB_PASSWORD || "cyberchat",
-      database: process.env.DB_NAME || "cyberchat",
+      url: databaseUrl,
       entities: [Thread, Comment, User],
       synchronize: true,
       logging: false,
